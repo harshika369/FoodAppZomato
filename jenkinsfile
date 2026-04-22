@@ -18,12 +18,6 @@ pipeline {
             }
         }
 
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/harshika369/FoodAppZomato.git'
-            }
-        }
-
         stage('SonarQube Analysis') {
             steps {
                 script {
