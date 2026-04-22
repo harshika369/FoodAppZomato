@@ -77,6 +77,18 @@ pipeline {
             }
         }
 
+        stage('Docker Scout Scan') {
+            steps {
+                script {
+                    docker.withRegistry('', DOCKER_CREDENTIALS) {
+                        sh '''
+                        docker scout quickview $DOCKER_IMAGE || true
+                        '''
+                    }
+                }
+            }
+        }
+
         stage('Trivy Image Scan') {
             steps {
                 sh 'trivy image $DOCKER_IMAGE || true'
