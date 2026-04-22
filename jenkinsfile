@@ -20,7 +20,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/KastroVKiran/Zomato-Project-Kastro.git'
+                git branch: 'main', url: 'https://github.com/harshika369/FoodAppZomato.git'
             }
         }
 
